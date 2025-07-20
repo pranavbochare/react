@@ -1,26 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="image-container">
-        <img
-          className="logo"
-          src="https://thumbs.dreamstime.com/b/food-delivery-logo-design-template-134749604.jpg"></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const resObj = [
   {
     id: 1,
@@ -114,51 +91,4 @@ const resObj = [
   },
 ];
 
-const RestaurantCard = (resData) => {
-  console.log(resData.resData.name);
-  console.log("response data : ", resData);
-  const { name, cuisines, rating, price, image } = resData.resData;
-  return (
-    <div className="card">
-      <img className="image" src={image}></img>
-      <h3 className="name">{name}</h3>
-      <p className="cuisine">{cuisines.join(", ")}</p>
-      <p className="rating">{rating}</p>
-      <p className="price">{price}</p>
-    </div>
-  );
-};
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">
-        <input className="input" type="text" placeholder="search for restaurants"></input>
-        <button className="btn">Search</button>
-      </div>
-      <div className="res-container">
-        {/* <RestaurantCard
-          resName="Meghana Foods"
-          cuisine="Biryani,North Indian"
-          rating="4.5 stars"
-          rate="1000rs"
-        />
-        <RestaurantCard resName="KFC" cuisine="Burger" rating="4.2 stars" rate="200rs" /> */}
-        {resObj.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resObj;
