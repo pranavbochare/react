@@ -18,3 +18,4 @@
 - HTTPs
 - tree shaking - remove unused code
 - defferent dev and production bundles
+
