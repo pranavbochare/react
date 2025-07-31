@@ -5,12 +5,12 @@ const RestaurantCard = (resData) => {
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } = resData.resData;
   console.log("cloudinary image id :", cloudinaryImageId);
   return (
-    <div className="card">
-      <img className="image" src={IMG_CDN + cloudinaryImageId}></img>
-      <h3 className="name">{name}</h3>
-      <p className="cuisine">{cuisines.join(", ")}</p>
-      <p className="rating">{avgRating}</p>
-      <p className="price">{costForTwo}</p>
+    <div className="border-2 w-65 m-10 h-120 rounded-2xl hover:shadow-2xl">
+      <img className="w-65 h-65 rounded-t-2xl" src={IMG_CDN + cloudinaryImageId}></img>
+      <h3 className="p-2 font-bold">{name}</h3>
+      <p className="p-2">{cuisines.join(", ")}</p>
+      <p className="p-2 font-bold">{avgRating}</p>
+      <p className="p-2">{costForTwo}</p>
     </div>
   );
 };
